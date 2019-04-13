@@ -1,0 +1,62 @@
+Add Css
+=========
+ol.flex-control-nav.flex-control-thumbs li img {
+    width: 59px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+}
+ol.flex-control-nav.flex-control-thumbs li img.flex-active {
+    border: 1px solid #6b6b6b;
+}
+
+Replace Css
+===========
+.product__image .flex-direction-nav {
+  //display: none;
+}
+
+theme.js find theme.Slideshow
+=================
+find
+controlNav: true,
+
+replace
+controlNav: 'thumbnails',
+
+
+find
+<li class="slide" data-index="0" data-variant-img="{{ featured_image.id }}">
+
+replace
+<li class="slide" data-index="0" data-variant-img="{{ featured_image.id }}" data-thumb="{{featured_image | img_url: '100x'}}">
+
+
+find
+<li class="slide" data-index="{{ index }}" data-variant-img="{{ image.id }}">
+
+replace
+<li class="slide" data-index="{{ index }}" data-variant-img="{{ image.id }}" data-thumb="{{image | img_url: '100x'}}">
+
+
+====
+.flex-direction-nav a {
+
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  font-weight: $bodyFontWeightBold;
+  display: block;
+  color: #1d1d1d;
+  z-index: 999999;
+  cursor: pointer;
+  margin-bottom: 0px;
+
+  &.flex-prev {
+    left: 15px;
+    transition: all 200ms linear;
+  }
+  &.flex-next {
+    right: 15px;
+    transition: all 200ms linear;
+  }
+}
