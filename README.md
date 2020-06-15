@@ -1,1 +1,1 @@
-# Product-Image-slider-with-thumbnails
+# Shopify Jumpstart Theme Product-Image-slider-with-thumbnails
